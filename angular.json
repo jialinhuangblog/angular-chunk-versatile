@@ -17,6 +17,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref" : "/angular-chunk-versatile/",
+            "deployUrl": "/angular-chunk-versatile/",
             "outputPath": "dist/angular-chunk-versatile",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -121,8 +123,16 @@
               "devServerTarget": "angular-chunk-versatile:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "angular-chunk-versatile"
+    }
+  },
+  "defaultProject": "angular-chunk-versatile",
+  "cli": {
+    "analytics": "34b287ae-d5f7-4f17-9025-922cd0fb8cff"
+  }
 }
