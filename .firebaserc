@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "chunks-versatile": {
+      "hosting": {
+        "angular-chunk-versatile": [
+          "chunks-versatile"
+        ]
+      }
+    }
+  }
+}
