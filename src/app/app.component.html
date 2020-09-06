@@ -288,14 +288,16 @@
     }
   }
 </style>
-<app-profile></app-profile>
-<mat-slide-toggle [(ngModel)]="tldr"> Slide me!</mat-slide-toggle>
-<app-brief *ngIf="tldr; else details"></app-brief>
+<div class="app">
+  <app-profile></app-profile>
+  <app-brief></app-brief>
+  <mat-slide-toggle [(ngModel)]="tldr"> Slide me!</mat-slide-toggle>
 
-<ng-template #details>
-  <div>
-    <app-details></app-details>
-  </div>
-</ng-template>
-..
-<router-outlet></router-outlet>
+  <app-tldr *ngIf="tldr; else details"></app-tldr>
+  <ng-template #details>
+    <div>
+      <app-details></app-details>
+    </div>
+  </ng-template>
+</div>
+<!-- <router-outlet></router-outlet> -->

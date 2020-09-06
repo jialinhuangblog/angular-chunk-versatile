@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  tldr: Boolean = false;
+  tldr: Boolean = true;
 }

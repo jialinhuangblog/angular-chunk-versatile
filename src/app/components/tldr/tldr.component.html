@@ -1,1 +1,5 @@
-<p> CHIPS</p>
+<mat-chip-list class="mat-chip-list-stacked">
+    <mat-chip *ngFor="let chunk of chunks" color="primary">
+        {{ chunk.chunk }}
+    </mat-chip>
+</mat-chip-list>
