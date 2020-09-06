@@ -1,5 +1,8 @@
 .tldr-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;;
+    grid-template-columns: 200px 1fr;;
 }
 
+.flip-list-move {
+    transition: top 2s ease-in 1s, opacity 2s ease-in 1s;
+  }

@@ -1,7 +1,9 @@
 <div class="tldr-container">
-    <mat-chip-list class="mat-chip-list-stacked" [@listAnimation]="chunks.length">
-        <mat-chip *ngFor="let chunk of chunks" color="accent">
+    <!-- if chunk changes, trigger listAnimation -->
+    <mat-chip-list class="mat-chip-list-stacked" [@listAnimation]="chunks" [transition-group]="'flip-list'">
+        <mat-chip *ngFor="let chunk of chunks" color="accent" transition-group-item>
             {{ chunk.chunk }}
         </mat-chip>
     </mat-chip-list>
+    <button (click)="shuffle()"></button>
 </div>

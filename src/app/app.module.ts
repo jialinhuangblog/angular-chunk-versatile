@@ -14,6 +14,7 @@ import { BriefComponent } from './components/brief/brief.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../app/shared/matierial/matierial.module';
 import { environment } from 'src/environments/environment';
+import { TransitionGroupComponent, TransitionGroupItemDirective } from './directives/transition-directive.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { environment } from 'src/environments/environment';
     ProfileComponent,
     TLDRComponent,
     DetailsComponent,
-    BriefComponent
+    BriefComponent,
+    TransitionGroupComponent,
+    TransitionGroupItemDirective
   ],
   imports: [
     BrowserModule,
