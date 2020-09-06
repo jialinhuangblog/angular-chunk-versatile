@@ -1,5 +1,7 @@
-<mat-chip-list class="mat-chip-list-stacked">
-    <mat-chip *ngFor="let chunk of chunks" color="primary">
-        {{ chunk.chunk }}
-    </mat-chip>
-</mat-chip-list>
+<div class="tldr-container">
+    <mat-chip-list class="mat-chip-list-stacked" [@listAnimation]="chunks.length">
+        <mat-chip *ngFor="let chunk of chunks" color="accent">
+            {{ chunk.chunk }}
+        </mat-chip>
+    </mat-chip-list>
+</div>
