@@ -7,6 +7,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { TLDRComponent } from './components/tldr/tldr.component';
 import { DetailsComponent } from './components/details/details.component';
 import { BriefComponent } from './components/brief/brief.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BriefComponent } from './components/brief/brief.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
