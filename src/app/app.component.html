@@ -289,15 +289,13 @@
   }
 </style>
 <div class="app">
-  <app-profile></app-profile>
-  <app-brief></app-brief>
+  <!-- <app-profile></app-profile>
+  <app-brief></app-brief> -->
   <mat-slide-toggle [(ngModel)]="tldr"> Slide me!</mat-slide-toggle>
 
   <app-tldr *ngIf="tldr; else details"></app-tldr>
   <ng-template #details>
-    <div>
-      <app-details></app-details>
-    </div>
+    <app-details></app-details>
   </ng-template>
 </div>
 <!-- <router-outlet></router-outlet> -->

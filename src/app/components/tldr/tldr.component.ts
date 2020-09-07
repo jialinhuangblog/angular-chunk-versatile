@@ -12,7 +12,7 @@ const listAnimation = trigger('listAnimation', [
     ),
     query(':leave',
       animate('200ms', style({ opacity: 0 })),
-      { optional: true}
+      { optional: true }
     )
   ])
 ]);
@@ -30,31 +30,54 @@ const listAnimation = trigger('listAnimation', [
 export class TLDRComponent implements OnInit {
 
   constructor(private chunkService: ChunkService) { }
-  
+
   visibility: Boolean = false;
   chunks: Chunk[] = [];
 
   ngOnInit(): void {
     this.getChunks();
   }
-  
-  getChunks() {
+
+  getChunks(key = '') {
+    console.log(key)
     this.chunks.length = 0;
     this.chunkService.getChunks()
       .snapshotChanges()
       .forEach(actions => {
-        this.chunks = []
+        var tempChunks = []
         actions.forEach(action => {
           let item = action.payload.doc;
           var data = item.data();
           data['$key'] = item.id;
-          this.chunks.push(data as Chunk);
+          data['selected'] = `${!!data.point}`
+          tempChunks.push(data as Chunk);
         })
+
+        this.chunks = tempChunks.filter(c => key? c.type === key: true)
       });
+  }
+
+  reorder() {
+    this.chunks = this.chunks.sort((a, b) => {
+      var big = a.point - b.point < 0
+      return big ? 1 : 0
+    });
   }
 
   shuffle() {
     this.chunks = this.shufflestuff(this.chunks);
+  }
+
+  showF() {
+    this.getChunks('F')
+  }
+
+  showB() {
+    this.getChunks('B')
+  }
+
+  showDev() {
+    this.getChunks('Dev')
   }
 
   shufflestuff(array) {

@@ -1,9 +1,27 @@
-<div class="tldr-container">
-    <!-- if chunk changes, trigger listAnimation -->
-    <mat-chip-list class="mat-chip-list-stacked" [@listAnimation]="chunks" [transition-group]="'flip-list'">
-        <mat-chip *ngFor="let chunk of chunks" color="accent" transition-group-item>
+<div>
+    <h1>My Tech stack--</h1>
+
+    <div class="tldr-container">
+        <!-- if chunk changes, trigger listAnimation -->
+        <!-- <mat-chip-list class="mat-chip-list-stacked chip-list" [@listAnimation]="chunks" [transition-group]="'flip-list'" (click)="shuffle()">
+        <mat-chip *ngFor="let chunk of chunks" color="accent" selected="{{chunk.selected}}" >
             {{ chunk.chunk }}
         </mat-chip>
-    </mat-chip-list>
-    <button (click)="shuffle()"></button>
+    </mat-chip-list> -->
+
+        <div [@listAnimation]="chunks" [transition-group]="'flip-list'" (click)="shuffle()">
+            <div class="bar-list" *ngFor="let chunk of chunks" transition-group-item>
+                <p class="chunk-name">{{ chunk.chunk }}</p>
+                <mat-progress-bar mode="determinate" value="{{chunk.point * 10}}" color="{{chunk.type === 'F'? 'primary' : chunk.type === 'B'? 'accent': 'warn'}}"></mat-progress-bar>
+            </div>
+        </div>
+
+        <div class="action-btns">
+            <button mat-raised-button (click)="getChunks()">All</button>
+            <button mat-raised-button (click)="reorder()">Reorder</button>
+            <button mat-raised-button (click)="showF()">show F</button>
+            <button mat-raised-button (click)="showB()">show B</button>
+            <button mat-raised-button (click)="showDev()">show Dev</button>
+        </div>
+    </div>
 </div>

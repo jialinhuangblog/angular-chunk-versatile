@@ -1,8 +1,31 @@
 .tldr-container {
     display: grid;
-    grid-template-columns: 200px 1fr;;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 40px;
 }
 
 .flip-list-move {
     transition: top 2s ease-in 1s, opacity 2s ease-in 1s;
-  }
+}
+
+.chip-list{
+    margin-right: 16px;
+}
+
+.bar-list {
+    margin-bottom: 16px;
+}
+
+.chunk-name {
+    margin: 0;
+}
+
+.action-btns {
+    display: flex;
+    padding: 48px;
+    flex-direction: column;
+    row-gap: 8px;
+    & > button {
+        max-width: 120px;
+    }
+}
