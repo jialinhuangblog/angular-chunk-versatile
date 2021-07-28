@@ -1,31 +1,43 @@
-.tldr-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 40px;
+.tldr-query {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > * {
+    margin-right: 8px;
+  }
 }
 
-.flip-list-move {
-    transition: top 2s ease-in 1s, opacity 2s ease-in 1s;
-}
-
-.chip-list{
-    margin-right: 16px;
-}
-
-.bar-list {
-    margin-bottom: 16px;
+.tldr-bar-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  p {
+    width: 120px;
+  }
 }
 
 .chunk-name {
-    margin: 0;
+  margin: 0;
+}
+.chunk-bar {
+  width: 240px;
+  height: 16px;
+  border-radius: 4px;
 }
 
 .action-btns {
-    display: flex;
-    padding: 48px;
-    flex-direction: column;
-    row-gap: 8px;
-    & > button {
-        max-width: 120px;
-    }
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  & > button {
+    max-width: 120px;
+    padding: 4px;
+    margin-bottom: 16px;
+    margin-right: 8px;
+  }
+}
+
+.chip-list {
+  margin-right: 16px;
 }

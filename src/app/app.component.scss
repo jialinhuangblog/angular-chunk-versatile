@@ -1,9 +1,11 @@
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css"; 
-
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 .app {
-    padding: 64px;
-    background: #f0f0f0;
-    box-sizing: border-box;
-    height: 100vh;
+  padding: 32px;
+  background: #f0f0f0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  @media (max-width: 600px) {
+    padding: 8px 16px;
+  }
 }
