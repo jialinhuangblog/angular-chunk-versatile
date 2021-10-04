@@ -9,21 +9,40 @@
 
 .tldr-bar-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 16px;
-  p {
-    width: 120px;
+  padding: 48px;
+  @media (min-width: 375px) {
+    padding: 16px;
   }
 }
 
-.chunk-name {
-  margin: 0;
+.tldr-bar-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 32px;
+  flex: 1;
+  margin: 16px;
 }
+.chunk-word {
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  .chunk-des {
+    font-size: 0.7rem;
+    color: #444;
+    margin: 0;
+  }
+  .chunk-name {
+    margin: 0;
+  }
+}
+
 .chunk-bar {
-  width: 240px;
-  height: 16px;
-  border-radius: 4px;
+  width: 200px;
+  height: 40px;
+  border-radius: 8px;
 }
 
 .action-btns {

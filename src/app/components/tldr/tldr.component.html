@@ -2,25 +2,38 @@
   <div class="tldr-query">
     <h1>My Tech stack</h1>
     <div class="action-btns">
-      <button mat-raised-button (click)="getChunks()">All</button>
-      <!-- <button mat-raised-button (click)="reorder()">Reorder</button> -->
-      <button mat-raised-button (click)="showF()">Frontend</button>
-      <button mat-raised-button (click)="showB()">Backend</button>
-      <button mat-raised-button (click)="showDev()">Devops</button>
+      <mat-form-field appearance="fill">
+        <mat-label>Categories分類</mat-label>
+        <select matNativeControl [(ngModel)]="selectedCategory" name="category">
+          <option value="" selected>ALL</option>
+          <option *ngFor="let category of categories" [value]="category.value">
+            {{ category.viewValue }}
+          </option>
+        </select>
+      </mat-form-field>
     </div>
   </div>
 
   <div
+    class="tldr-bar-list"
     [@listAnimation]="chunks"
     [transition-group]="'flip-list'"
     (click)="shuffle()"
   >
-    <div class="tldr-bar-list" *ngFor="let chunk of chunks" transition-group-item>
-      <p class="chunk-name">{{ chunk.chunk }}</p>
+    <div
+      class="tldr-bar-item"
+      *ngFor="let chunk of chunks"
+      transition-group-item
+    >
+      <div class="chunk-word">
+        <p class="chunk-name">{{ chunk.chunk }}</p>
+        <p class="chunk-des">{{ chunk.des ? chunk.des : "&#160;" }}</p>
+      </div>
       <mat-progress-bar
         class="chunk-bar"
         mode="determinate"
         value="{{ chunk.point * 10 }}"
+        matTooltip="{{ chunk.point * 10 }}"
         color="{{
           chunk.type === 'F'
             ? 'primary'
