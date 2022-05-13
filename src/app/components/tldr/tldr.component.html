@@ -1,9 +1,9 @@
 <div>
   <div class="tldr-query">
-    <h1>My Tech stack</h1>
+    <h1>Tech stack</h1>
     <div class="action-btns">
-      <mat-form-field appearance="fill">
-        <mat-label>Categories分類</mat-label>
+      <mat-form-field appearance="">
+        <mat-label>Categories</mat-label>
         <select matNativeControl [(ngModel)]="selectedCategory" name="category">
           <option value="" selected>ALL</option>
           <option *ngFor="let category of categories" [value]="category.value">
@@ -12,7 +12,9 @@
         </select>
       </mat-form-field>
     </div>
+
   </div>
+  <div style="text-align:center;font-size:12px;">using Angular, data hosted by Cloud Firestore</div>
 
   <div
     class="tldr-bar-list"

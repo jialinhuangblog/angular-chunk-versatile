@@ -5,6 +5,10 @@
   & > * {
     margin-right: 8px;
   }
+
+  @media (max-width: 600px) {
+   flex-direction: column;
+  }
 }
 
 .tldr-bar-list {
@@ -43,6 +47,10 @@
   width: 200px;
   height: 40px;
   border-radius: 8px;
+  @media (max-width: 600px) {
+    height: 24px;
+    width: 100%;
+  }
 }
 
 .action-btns {
